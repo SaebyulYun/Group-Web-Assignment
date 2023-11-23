@@ -64,6 +64,7 @@ function loadPosts(search = '', filterType = 'title') {
                 postCard.innerHTML = `
                     <div class="post-header">
                         <span class="post-category">${post.category}</span>
+                        <button class="common-button" onclick="commonPost(${post.id})">Common</button>
                         <button class="delete-button" onclick="deletePost(${post.id})">X</button>
                     </div>
                     <img src="${post.image_path}" alt="" class="post-image">
@@ -74,6 +75,16 @@ function loadPosts(search = '', filterType = 'title') {
                         <div class="post-author">${post.author}</div>
                     </div>
                 `;
+                if( post.common !== null){
+                    const postCommon = document.createElement('div');
+                    postCommon.className = 'post-common';
+                    postCommon.innerHTML = `
+                        <h2 class="post-title">Common</h2>
+                        <p class="post-excerpt">${post.common}</p>
+                        <div class="post-author">${post.common_author}</div>
+                        `;
+                    postCard.appendChild(postCommon);
+                }
                 // get the first child
                 const firstChild = postsDiv.firstChild;
                 // use insertBefore let postCard showing at the very begining

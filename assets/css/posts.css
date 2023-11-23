@@ -1,7 +1,6 @@
 
 main {
-  /* display: flex; */
-  max-width: 1000px;
+  max-width: 700px;
   min-width: 540px;
   margin: 20px auto;
   padding: 20px;
@@ -25,6 +24,18 @@ label {
 
 .postDiv {
   display: flex;
+  width: 700px;
+}
+
+.common-button {
+  margin-left: auto;
+  background-color: white;
+  color: #333;
+  border: none;
+}
+
+.common-button:hover {
+  cursor: pointer;
 }
 
 #title, #content, #category, #author {
@@ -109,15 +120,6 @@ button, #reset, #submit, uploadImg {
 }
 
 /* --------------------------------------------- */
-
-main {
-  max-width: 100%;
-  margin: 20px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
 
 .filterType {
   opacity: 0; 
