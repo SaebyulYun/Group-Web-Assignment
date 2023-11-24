@@ -11,7 +11,6 @@ document.getElementById('postForm').addEventListener('submit', function(e) {
     })
     .then(response => response.text())
     .then(data => {
-        console.log(data); // You can handle the server response here
         // Reload posts
         loadPosts();
         // Reset the form
@@ -25,27 +24,12 @@ document.getElementById('postForm').addEventListener('submit', function(e) {
     });
 });
 
-
-// Delete the post
-function deletePost(id) {
-    fetch(`apps/delete_post.php?id=${id}`, { method: 'GET' })
-        .then(response => response.text())
-        .then(data => {
-            // reload the post
-            loadPosts();
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        });
-}
-
 // load and display posts
 document.getElementById('filterForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
     const search = document.getElementById('search').value;
     const filterType = document.querySelector('input[name="filterType"]:checked').value;
-    console.log(filterType);
     loadPosts(search, filterType);
 });
 

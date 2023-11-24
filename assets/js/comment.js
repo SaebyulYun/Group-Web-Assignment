@@ -44,8 +44,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                });
-            });
+                }); 
+            });           
         });
     }); 
 });
@@ -115,3 +115,15 @@ function loadPost(postId, callback) {
         });
 }
 
+// Delete the post
+function deletePost(id) {
+    fetch(`apps/delete_post.php?id=${id}`, { method: 'GET' })
+        .then(response => response.text())
+        .then(data => {
+            // reload the post
+            window.location.href = 'posts.html'
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+}
