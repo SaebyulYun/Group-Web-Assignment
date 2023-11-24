@@ -27,14 +27,14 @@ label {
   width: 700px;
 }
 
-.common-button {
+.comment-button {
   margin-left: auto;
   background-color: white;
   color: #333;
   border: none;
 }
 
-.common-button:hover {
+.comment-button:hover {
   cursor: pointer;
 }
 
