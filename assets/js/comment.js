@@ -3,12 +3,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const postId = urlParams.get('postId');
 
-    if (postId) {
-        loadPost(postId); 
-    }
+    loadPost(postId, function() {
+        console.log(1);
+        const commentButton = document.getElementById("commentButton");
+        commentButton.addEventListener('click', function () {
+            const postsDiv = document.getElementById('posts');
+            const postCard = document.getElementById('post-card');
+            const addComment = document.createElement('form');
+            addComment.innerHTML = `
+            <div class="comment-card">
+                <div class="comment-header">
+                    <input class="comment-profile-name" type="text" id="comName" name="comName" placeholder="Name" required>
+                </div>
+                <input class="comment-content" type="text" id="comContent" name="comContent" placeholder="Content" required>
+                <button type="submit">Submit</button>
+            </div>
+            `;
+            if (postCard.nextSibling) {
+                postsDiv.insertBefore(addComment, postCard.nextSibling);
+            } else {
+                postsDiv.appendChild(addComment);
+            }
+        });
+    }); 
 });
 
-function loadPost(postId) {
+function loadPost(postId, callback) {
 
     fetch(`apps/filter_posts.php?postId=${postId}`)
         .then(response => response.json())
@@ -22,6 +42,7 @@ function loadPost(postId) {
             data.forEach((post, index, array) => {
                 const postCard = document.createElement('div');
                 postCard.className = 'post-card';
+                postCard.id = 'post-card';
 
                 if (post.comment) {
                     postComment.innerHTML += `
@@ -51,21 +72,25 @@ function loadPost(postId) {
                         <div class="post-author">${post.author}</div>
                         <div class="post-actions">
                             <div class="post-action">Like</div>
-                            <div class="post-action">Comment</div>
+                            <div id="commentButton" class="post-action">Comment</div>
                             <div class="post-action">Share</div>
                         </div>
                     </div>
                     `;
                     postsDiv.appendChild(postCard);
+                    console.log(0);
                 }
                 // use insertBefore let postCard showing at the very begining
                 if (index === array.length - 1){
                     postsDiv.appendChild(postComment);
                 }
             });
-
+            if (callback) {
+                callback();
+            }
         })
         .catch(error => {
             console.error('Error:', error);
         });
 }
+

@@ -54,12 +54,11 @@ function loadPosts(search = '', filterType = 'title', postId = null) {
     fetch(`apps/filter_posts.php?search=${search}&filterType=${filterType}`)
         .then(response => response.json())
         .then(data => {
-            // console.log(data);
+
             const postsDiv = document.getElementById('posts');
             postsDiv.innerHTML = ''; // Clear existing posts
             data.forEach(post => {
-                // console.log(post);
-                // console.log(post.image_path);
+
                 const postCard = document.createElement('div');
                 postCard.className = 'post-card';
                 postCard.innerHTML = `
@@ -76,7 +75,7 @@ function loadPosts(search = '', filterType = 'title', postId = null) {
                     </div>
                 `;
                 postCard.dataset.postId = post.id;
-                postCard.onclick = function(event) {
+                postCard.onclick = function() {
                     handlePostCardClick(this.dataset.postId);
                 };
                 // get the first child
@@ -92,7 +91,6 @@ function loadPosts(search = '', filterType = 'title', postId = null) {
 
 // view post 
 function handlePostCardClick(postId) {
-    console.log("Post card clicked, Post ID:", postId);
     window.location.href = 'comment.html?postId=' + postId;
 }
 

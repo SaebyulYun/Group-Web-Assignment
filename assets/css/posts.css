@@ -263,4 +263,10 @@ button, #reset, #submit, uploadImg {
 .comment-content {
   margin-bottom: 20px;
 }
-
+.posts input {
+  margin: 0;
+  border: none;
+}
+.posts form {
+  margin: 2px 0;
+}
