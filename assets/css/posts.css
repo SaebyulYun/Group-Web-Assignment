@@ -247,6 +247,7 @@ button, #reset, #submit, uploadImg {
   padding: 20px;
   /* width: 660px; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 .comment-header {
   display: flex;
@@ -269,4 +270,16 @@ button, #reset, #submit, uploadImg {
 }
 .posts form {
   margin: 2px 0;
+}
+.comment-card button {
+  background-color: transparent;
+  color: #65676b;
+  border: none;
+  font-size: 16px;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+.comment-card button:hover {
+  cursor: pointer;
 }

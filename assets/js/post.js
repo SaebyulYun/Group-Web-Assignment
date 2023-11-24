@@ -4,7 +4,7 @@ document.getElementById('postForm').addEventListener('submit', function(e) {
 
     // FormData will automatically capture all fields from the form
     var formData = new FormData(this);
-
+    console.log(formData);
     fetch('apps/add_post.php', {
         method: 'POST',
         body: formData  // FormData will be sent with the correct Content-Type header
@@ -64,7 +64,6 @@ function loadPosts(search = '', filterType = 'title', postId = null) {
                 postCard.innerHTML = `
                     <div class="post-header">
                         <span class="post-category">${post.category}</span>
-                        <button class="delete-button" onclick="deletePost(${post.id})">X</button>
                     </div>
                     <img src="${post.image_path}" alt="" class="post-image">
                     <div class="post-content">

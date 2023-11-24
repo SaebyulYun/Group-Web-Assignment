@@ -4,12 +4,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const postId = urlParams.get('postId');
 
     loadPost(postId, function() {
-        console.log(1);
+
         const commentButton = document.getElementById("commentButton");
         commentButton.addEventListener('click', function () {
             const postsDiv = document.getElementById('posts');
             const postCard = document.getElementById('post-card');
             const addComment = document.createElement('form');
+            addComment.id = 'comForm';
             addComment.innerHTML = `
             <div class="comment-card">
                 <div class="comment-header">
@@ -24,6 +25,27 @@ document.addEventListener('DOMContentLoaded', function() {
             } else {
                 postsDiv.appendChild(addComment);
             }
+            // new comment
+            document.getElementById('comForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // FormData will automatically capture all fields from the form
+                var formData = new FormData(this);
+                formData.append('postId', postId);
+                fetch(`apps/add_comment.php`, {
+                    method: 'POST',
+                    body: formData  // FormData will be sent with the correct Content-Type header
+                })
+                .then(response => response.text())
+                .then(data => {
+                    // Reload posts
+                    loadPost(postId);
+                    // Reset the form
+                    document.getElementById('comForm').reset();
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            });
         });
     }); 
 });
@@ -78,7 +100,6 @@ function loadPost(postId, callback) {
                     </div>
                     `;
                     postsDiv.appendChild(postCard);
-                    console.log(0);
                 }
                 // use insertBefore let postCard showing at the very begining
                 if (index === array.length - 1){
