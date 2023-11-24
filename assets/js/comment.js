@@ -16,14 +16,32 @@ function loadPost(postId) {
 
             const postsDiv = document.getElementById('posts');
             postsDiv.innerHTML = ''; // Clear existing posts
-            data.forEach(post => {
-
+            const postComment = document.createElement('div');
+            postComment.className = 'comment-card';
+            
+            data.forEach((post, index, array) => {
                 const postCard = document.createElement('div');
                 postCard.className = 'post-card';
-                postCard.innerHTML = `
+
+                if (post.comment) {
+                    postComment.innerHTML += `
+                    <div class="comment-header">
+                        <div>
+                            <span class="comment-profile-name">${post.comment_author}</span>
+                            <span class="comment-profile-verified">&#10003;</span>
+                        </div>
+                    </div>
+                    <div class="comment-content">
+                        ${post.comment}
+                    </div>
+                    `;
+                }
+
+                if (index === 0) {
+                    postCard.innerHTML = `
                     <div class="post-header">
                         <span class="post-category">${post.category}</span>
-                        <button class="delete-button" onclick="deletePost(${post.id})">X</button>
+                        <button class="delete-button" onclick="deletePost(${post.id})">Delete</button>
                     </div>
                     <img src="${post.image_path}" alt="" class="post-image">
                     <div class="post-content">
@@ -31,17 +49,21 @@ function loadPost(postId) {
                         <h2 class="post-title">${post.title}</h2>
                         <p class="post-excerpt">${post.content}</p>
                         <div class="post-author">${post.author}</div>
+                        <div class="post-actions">
+                            <div class="post-action">Like</div>
+                            <div class="post-action">Comment</div>
+                            <div class="post-action">Share</div>
+                        </div>
                     </div>
-                `;
-                postCard.dataset.postId = post.id;
-                postCard.onclick = function(event) {
-                    handlePostCardClick(this.dataset.postId);
-                };
-                // get the first child
-                const firstChild = postsDiv.firstChild;
+                    `;
+                    postsDiv.appendChild(postCard);
+                }
                 // use insertBefore let postCard showing at the very begining
-                postsDiv.insertBefore(postCard, firstChild);
+                if (index === array.length - 1){
+                    postsDiv.appendChild(postComment);
+                }
             });
+
         })
         .catch(error => {
             console.error('Error:', error);

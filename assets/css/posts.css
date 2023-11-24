@@ -2,7 +2,7 @@
 main {
   max-width: 700px;
   min-width: 540px;
-  margin: 20px auto;
+  margin: auto;
   padding: 20px;
   background: white;
   border-radius: 10px;
@@ -148,7 +148,8 @@ button, #reset, #submit, uploadImg {
 
 .post-card {
   width: 100%; 
-  margin: 20px auto;
+  margin: 2px auto;
+  margin-top: 0;
   font-family: Arial, sans-serif;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -172,8 +173,8 @@ button, #reset, #submit, uploadImg {
   border: none;
   background-color: transparent;
   cursor: pointer;
-  font-size: 24px;
-  color: #333;
+  /* font-size: 24px; */
+  color: #65676b;
 }
 
 .post-image {
@@ -221,5 +222,45 @@ button, #reset, #submit, uploadImg {
   #title1, #category1, #author1, #email, #login, #pass, #pass2, #content1 {
     width: 400px;
   }
+}
+
+.post-actions {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid #ccc;
+}
+.post-action {
+  cursor: pointer;
+  padding: 10px 0;
+  color: #65676b;
+}
+.comment-card {
+  font-family: 'Arial', sans-serif;
+  background: #f0f2f5;
+  /* margin: 0; */
+  /* padding: 0; */
+  background: #fff;
+  border-radius: 10px;
+  margin: auto;
+  padding: 20px;
+  /* width: 660px; */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.comment-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.comment-profile-name {
+  font-weight: bold;
+}
+.comment-profile-verified {
+  color: #1DA1F2;
+  margin-left: 5px;
+}
+.comment-content {
+  margin-bottom: 20px;
 }
 

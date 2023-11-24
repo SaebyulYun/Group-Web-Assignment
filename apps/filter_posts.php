@@ -8,8 +8,10 @@ $postId = $_GET['postId'] ?? null;
 $posts = [];
 
 if ($postId) {
-    // 如果提供了 postId，則僅查詢該帖子
-    $query = "SELECT * FROM blog_posts WHERE id = ?";
+    $query = "SELECT blog_posts.*, comment.id AS comment_id, comment.comment, comment.author AS comment_author
+              FROM blog_posts
+              LEFT JOIN comment ON blog_posts.id = comment.post_id
+              WHERE blog_posts.id = ?";
     $stmt = $conn->prepare($query);
     $stmt->bind_param("i", $postId);
 } else {
