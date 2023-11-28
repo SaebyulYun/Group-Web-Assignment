@@ -1,3 +1,17 @@
+/**
+ * Name:    Assignmnet 2- GroupAssignment-Blog Platform
+ * Group:   3 - Saebyul Yun, Kuang-I Ho, Shang-Yuan Chang
+ * Date:    Nov 25, 2023 
+ * Section: CST8285 302 
+ * 
+ * @fileoverview
+ * For style the page signup.html 
+ *
+ * @author Saebyul Yun
+ * @version 1.0.0
+ * @lastmodified 2023-11-25
+ */
+
 main {
     max-width: 1000px;
     margin: 20px auto;
@@ -71,6 +85,7 @@ main {
     
     height: 30px;
     margin: 32px;
+    margin-left: 0; /* align with label */
     border-width: 5px;
     border-radius: 20px;
     padding: 8px 8px 8px;

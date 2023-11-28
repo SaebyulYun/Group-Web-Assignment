@@ -1,3 +1,17 @@
+/**
+ * Name:    Assignmnet 2- GroupAssignment-Blog Platform
+ * Group:   3 - Saebyul Yun, Kuang-I Ho, Shang-Yuan Chang
+ * Date:    Nov 25, 2023 
+ * Section: CST8285 302 
+ * 
+ * @fileoverview
+ * For controlling the page home.html
+ *
+ * @author Saebyul Yun
+ * @version 1.0.0
+ * @lastmodified 2023-11-25
+ */
+
 // Navigetor button events
 // This event in order to handle the event every time the toggle button is clicked
 const toggleBtn = document.querySelector('.navbar_toogleBtn');

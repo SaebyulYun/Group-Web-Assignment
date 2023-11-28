@@ -1,4 +1,19 @@
 <?php
+/**
+ * Name:    Assignmnet 2- GroupAssignment-Blog Platform
+ * Group:   3 - Saebyul Yun, Kuang-I Ho, Shang-Yuan Chang
+ * Date:    Nov 25, 2023 
+ * Section: CST8285 302 
+ * 
+ * @fileoverview
+ * For filtering the posts
+ * 
+ *
+ * @author Saebyul Yun, Kuang-I Ho, Shang-Yuan Chang
+ * @version 1.0.0
+ * @lastmodified 2023-11-25
+ */
+
 include 'database.php';
 
 $search = $_GET['search'] ?? null;

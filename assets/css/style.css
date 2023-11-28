@@ -1,3 +1,17 @@
+/**
+ * Name:    Assignmnet 2- GroupAssignment-Blog Platform
+ * Group:   3 - Saebyul Yun, Kuang-I Ho, Shang-Yuan Chang
+ * Date:    Nov 25, 2023 
+ * Section: CST8285 302 
+ * 
+ * @fileoverview
+ * For the general style setting
+ *
+ * @author Saebyul Yun
+ * @version 1.0.0
+ * @lastmodified 2023-11-25
+ */
+
 /* General Settings */
 :root{
   --text-color: rgb(255, 255, 255);
@@ -6,7 +20,6 @@
 }
 
 body {
-
   font-family: 'EB Garamond', serif; 
   margin: 0;
   padding: 0;
@@ -19,7 +32,7 @@ a {
 }
 
 .header {
-  height: 90px;
+  /* height: 90px; */ /* need to be disabled, or main will overlap with nav */
   width: 100%;
   transition: all 0.5s;
   z-index: 997;
@@ -92,8 +105,6 @@ footer {
   text-align: left;
   font: normal 16px sans-serif;
   padding: 45px 50px;
-
-
   bottom : 0;
 }
 
@@ -168,6 +179,7 @@ text-decoration:underline;
   .header{
     width: 100%;
   }
+
   .navbar{
     display: flex;
     justify-content: space-between;
@@ -175,16 +187,14 @@ text-decoration:underline;
     background-color: #263343;
     padding: 16px 24px; 
   }
-  
+
   .navbar_logo{
     font-size: 32px;
     color: var(--text-color);
-  
   }
   
   .navbar_logo i {
     color: var(--accent-color);
-
   }
   
   .navbar_menu {
@@ -197,7 +207,6 @@ text-decoration:underline;
     padding: 8px 12px;
     color: var(--text-color);
     font-size: 24px;
-  
   }
 
   /* Effect for background color on hover */

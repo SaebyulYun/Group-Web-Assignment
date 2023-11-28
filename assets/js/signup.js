@@ -1,14 +1,22 @@
-/* 
-Name: Shang-Yuan, Chang/ Saebyul Yun/ Kuang-I, Ho/
-Group: 
-Date: Nov 25, 2023 
-Section: Assignmnet 2- GroupAssignment-Blog
-*/
+/**
+ * Name:    Assignmnet 2- GroupAssignment-Blog Platform
+ * Group:   3 - Saebyul Yun, Kuang-I Ho, Shang-Yuan Chang
+ * Date:    Nov 25, 2023 
+ * Section: CST8285 302 
+ * 
+ * @fileoverview
+ * For controlling the page signup.html and user signup form validation
+ *
+ * @author Kuang-I Ho
+ * @version 1.0.0
+ * @lastmodified 2023-11-25
+ */
+
+// Get references
 let emailInput=document.querySelector("#email");
 let nameInput=document.querySelector("#login");
 let passwdInput=document.querySelector("#pass");
 let passwd2Input=document.querySelector("#pass2");
-
 
 passwdInput.attributes.required = "required";
 //create paragraph to display the error Msg returented by validateEmail()

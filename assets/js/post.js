@@ -1,3 +1,17 @@
+/**
+ * Name:    Assignmnet 2- GroupAssignment-Blog Platform
+ * Group:   3 - Saebyul Yun, Kuang-I Ho, Shang-Yuan Chang
+ * Date:    Nov 25, 2023 
+ * Section: CST8285 302 
+ * 
+ * @fileoverview
+ * For controlling the page posts.html
+ *
+ * @author Shang-Yuan Chang
+ * @version 1.0.0
+ * @lastmodified 2023-11-25
+ */
+
 // new post
 document.getElementById('postForm').addEventListener('submit', function(e) {
     e.preventDefault();
