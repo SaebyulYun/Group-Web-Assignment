@@ -12,7 +12,6 @@
  * @lastmodified 2023-11-25
  */
 
-
 /*container*/
 .container {
     overflow: hidden;
@@ -76,9 +75,9 @@
     box-shadow: 0 4px 12px rgba(240, 240, 240, 0.7);
   }
   
-  .swiper-button-prev{
+  /* .swiper-button-prev{
     background-image: url(../svg/icon-arrow-left-w.svg);
-  }
+  } */
   
   /*nespaper*/
   h2 {

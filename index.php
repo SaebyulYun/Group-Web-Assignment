@@ -15,6 +15,6 @@
  */
 
 // Redirectin to home.html
-header("Location: home.html");
+header("Location: pages/home.html");
 exit; // Stop after redirection
 ?>
