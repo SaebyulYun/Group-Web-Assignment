@@ -137,7 +137,7 @@ function validate(){
 };
 
 function redirectHome() {
-    location.href = 'index1.html';
+    location.href = 'posts.html';
 }
 const form = document.getElementById("form");
 form.addEventListener("submit", function(event){
